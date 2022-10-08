@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FiActivity, FiArchive, FiDelete } from "react-icons/fi";
+import { FiArrowDown, FiArrowUp, FiDelete } from "react-icons/fi";
 import Swal from "sweetalert2";
 
 function DetailPageAction({
@@ -8,10 +8,10 @@ function DetailPageAction({
   title,
   archived,
   archiveNote,
-  unArchiveNote,
+  unarchiveNote,
   deleteNote,
 }) {
-  function onArchiveNoteHandler() {
+  const onArchiveNoteHandler = () => {
     Swal.fire({
       title: `Arsip catatan "${title}"?`,
       text: "Apakah kamu yakin?",
@@ -33,13 +33,13 @@ function DetailPageAction({
         });
       }
     });
-  }
+  };
 
-  function onUnarchiveNoteHandler() {
-    unArchiveNote(id);
-  }
+  const onUnarchiveNoteHandler = () => {
+    unarchiveNote(id);
+  };
 
-  function onDeleteNoteHandler(id) {
+  const onDeleteNoteHandler = () => {
     Swal.fire({
       title: `Hapus catatan "${title}"?`,
       text: "Apakah kamu yakin?",
@@ -61,7 +61,7 @@ function DetailPageAction({
         });
       }
     });
-  }
+  };
 
   return (
     <div className='detail-page__action'>
@@ -72,7 +72,7 @@ function DetailPageAction({
           title='Aktifkan'
           onClick={onUnarchiveNoteHandler}
         >
-          <FiActivity />
+          <FiArrowUp />
         </button>
       ) : (
         <button
@@ -81,7 +81,7 @@ function DetailPageAction({
           title='Arsipkan'
           onClick={onArchiveNoteHandler}
         >
-          <FiArchive />
+          <FiArrowDown />
         </button>
       )}
       <button
@@ -99,9 +99,9 @@ function DetailPageAction({
 DetailPageAction.proptype = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  archive: PropTypes.bool.isRequired,
+  archived: PropTypes.bool.isRequired,
   archiveNote: PropTypes.func.isRequired,
-  unArchiveNote: PropTypes.func.isRequired,
+  unarchiveNote: PropTypes.func.isRequired,
   deleteNote: PropTypes.func.isRequired,
 };
 

@@ -58,7 +58,7 @@ class ArchivePage extends React.Component {
           <NoteList notes={filterNotes} />
         ) : (
           <div className='notes-list-empty'>
-            <p className='notes-list__empty'>Tidak ada catatan.</p>
+            <p className='notes-list__empty'>Tidak ada arsip catatan.</p>
           </div>
         )}
       </section>

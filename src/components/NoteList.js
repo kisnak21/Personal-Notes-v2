@@ -10,7 +10,9 @@ function NoteList({ notes, onDelete }) {
       ))}
     </section>
   ) : (
-    <div className='note-list__empty-message'>Tidak ada catatan.</div>
+    <div className='notes-list-empty'>
+      <p className='notes-list__empty'>Tidak ada catatan.</p>
+    </div>
   );
 }
 
