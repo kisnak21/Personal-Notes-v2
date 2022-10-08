@@ -4,7 +4,6 @@ import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
 import AddPage from "./pages/AddPage";
 import DetailPage from "./pages/DetailPage";
-import ArchivePage from "./pages/ArchivePage";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/add' element={<AddPage />} />
-          <Route path='/archive' element={<ArchivePage />} />
           <Route path='/notes/:id' element={<DetailPage />} />
         </Routes>
       </main>
