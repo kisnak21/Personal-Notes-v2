@@ -2,6 +2,7 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import NoteList from "../components/NoteList";
 import { deleteNote, getActiveNotes } from "../utils/local-data";
+import PropTypes from "prop-types";
 import SearchBar from "../components/SearchBar";
 
 function HomePageWrapper() {
@@ -73,5 +74,10 @@ class HomePage extends React.Component {
     );
   }
 }
+
+HomePage.proptype = {
+  defaultKeyword: PropTypes.string,
+  keywordChange: PropTypes.func.isRequired,
+};
 
 export default HomePageWrapper;

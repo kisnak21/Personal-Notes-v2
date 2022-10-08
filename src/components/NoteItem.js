@@ -5,7 +5,7 @@ import { showFormattedDate } from "../utils";
 
 function NoteItem({ title, body, onDelete, createdAt, id }) {
   return (
-    <div className='note-item'>
+    <article className='note-item'>
       <NoteItemBody
         id={id}
         title={title}
@@ -13,13 +13,15 @@ function NoteItem({ title, body, onDelete, createdAt, id }) {
         createdAt={showFormattedDate(createdAt)}
         onDelete={onDelete}
       />
-    </div>
+    </article>
   );
 }
 
 NoteItem.proptype = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
 };
 

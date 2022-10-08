@@ -16,6 +16,7 @@ function NoteItemBody({ title, body, createdAt, id }) {
 }
 
 NoteItemBody.proptype = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,

@@ -8,7 +8,7 @@ function DetailPageAction({
   title,
   archived,
   archiveNote,
-  unarchiveNote,
+  unArchiveNote,
   deleteNote,
 }) {
   const onArchiveNoteHandler = () => {
@@ -36,7 +36,7 @@ function DetailPageAction({
   };
 
   const onUnarchiveNoteHandler = () => {
-    unarchiveNote(id);
+    unArchiveNote(id);
   };
 
   const onDeleteNoteHandler = () => {
@@ -84,6 +84,7 @@ function DetailPageAction({
           <FiArrowDown />
         </button>
       )}
+
       <button
         className='action'
         type='button'
@@ -101,7 +102,7 @@ DetailPageAction.proptype = {
   title: PropTypes.string.isRequired,
   archived: PropTypes.bool.isRequired,
   archiveNote: PropTypes.func.isRequired,
-  unarchiveNote: PropTypes.func.isRequired,
+  unArchiveNote: PropTypes.func.isRequired,
   deleteNote: PropTypes.func.isRequired,
 };
 
